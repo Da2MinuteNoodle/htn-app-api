@@ -1,4 +1,4 @@
-const handleEnterCust = (req, res, db) => {
+const handleViewCust = (req, res, db) => {
   db.select().from('customers').then(function(data) {
     res.send(data)
   })
@@ -6,5 +6,5 @@ const handleEnterCust = (req, res, db) => {
 }
 
 module.exports = {
-  handleEnterCust
+  handleViewCust
 };
