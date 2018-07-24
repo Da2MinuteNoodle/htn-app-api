@@ -6,6 +6,7 @@ const knex = require('knex');
 
 const register = require('./controllers/register');
 const entercust = require('./controllers/entercust');
+const entercust = require('./controllers/editcust');
 const viewcust =require('./controllers/viewcust');
 const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
