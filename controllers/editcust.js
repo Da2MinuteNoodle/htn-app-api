@@ -12,7 +12,7 @@ const handleEditCust = (req, res, db) => {
     dogage: dogage,
     specialneeds: specialneeds,
     groomedbefore: groomedbefore
-  })
+  }).then(res.status(200).json('Customer Changed');)
   .catch(err => res.status(400).json('unable to enter customer'))
 }
 
