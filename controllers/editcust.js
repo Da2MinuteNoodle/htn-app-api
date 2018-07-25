@@ -1,5 +1,5 @@
 const handleEditCust = (req, res, db) => {
-  const { name, phone, dogname, dogbreed, dogsize, dogage, specialneeds, groomedbefore } = req.body;
+  const { id, name, phone, dogname, dogbreed, dogsize, dogage, specialneeds, groomedbefore } = req.body;
   if (!name || !phone || !dogname || !dogbreed || !dogsize || !dogage) {
     return res.status(400).json('Incorrect form submission');
   }
