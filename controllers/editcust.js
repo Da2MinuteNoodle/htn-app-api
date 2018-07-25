@@ -3,7 +3,7 @@ const handleEditCust = (req, res, db) => {
   if (!name || !phone || !dogname || !dogbreed || !dogsize || !dogage) {
     return res.status(400).json('Incorrect form submission');
   }
-  db('customers').update({
+  db('customers').where({ id: id }).update({
     name: name,
     phone: phone,
     dogname: dogname,
