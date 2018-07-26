@@ -1,6 +1,6 @@
 const handleEnterCust = (req, res, db) => {
   const { name, phone, dogname, dogbreed, dogsize, dogage, specialneeds, groomedbefore } = req.body;
-  if (!name || !phone || !dogname || !dogbreed || !dogsize || !dogage) {
+  if (!name || !phone) {
     return res.status(400).json('Incorrect form submission');
   }
   db('customers').insert({
