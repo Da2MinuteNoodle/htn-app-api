@@ -11,8 +11,7 @@ const handleEditCust = (req, res, db) => {
     dogsize: dogsize,
     dogage: dogage,
     specialneeds: specialneeds,
-    groomedbefore: groomedbefore,
-    // next_appt: next_appt
+    groomedbefore: groomedbefore
   }).then(res.status(200).json('Customer Changed'))
   .catch(err => res.status(400).json('unable to enter customer'))
 }
