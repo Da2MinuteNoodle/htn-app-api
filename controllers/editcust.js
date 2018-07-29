@@ -1,5 +1,5 @@
 const handleEditCust = (req, res, db) => {
-  const { id, name, phone, dogname, dogbreed, dogsize, dogage, specialneeds, groomedbefore } = req.body;
+  const { id, name, phone, dogname, dogbreed, dogsize, dogage, specialneeds, groomedbefore, nextappt } = req.body;
   if (!id) {
     return res.status(400).json('Incorrect form submission');
   }
@@ -11,7 +11,8 @@ const handleEditCust = (req, res, db) => {
     dogsize: dogsize,
     dogage: dogage,
     specialneeds: specialneeds,
-    groomedbefore: groomedbefore
+    groomedbefore: groomedbefore,
+    nextappt: nextappt
   }).then(res.status(200).json('Customer Changed'))
   .catch(err => res.status(400).json('unable to enter customer'))
 }
