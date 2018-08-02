@@ -11,6 +11,7 @@ const viewcust =require('./controllers/viewcust');
 const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
+const deletecust = require('./controllers/deletecust');
 
 const db = knex({
   client: 'pg',
@@ -28,6 +29,7 @@ app.use(cors());
 app.get('/', (req, res)=> { res.send('it is working!') })
 app.post('/signin', signin.handleSignin(db, bcrypt))
 app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcrypt) })
+app.delete('./deletecust', (req, res) => { deletecust.handleDeleteCust(req, res, db)})
 app.post('/entercust', (req, res) => { entercust.handleEnterCust(req, res, db) })
 app.put('/editcust', (req, res) => { editcust.handleEditCust(req, res, db) })
 app.get('/viewcust', (req, res) => { viewcust.handleViewCust(req, res, db) })
