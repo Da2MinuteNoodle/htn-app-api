@@ -11,7 +11,7 @@ const handleEnterCust = (req, res, db) => {
     dogsize: dogsize,
     dogage: dogage,
     specialneeds: specialneeds,
-    groomedbefore: groomedbefore
+    groomedbefore: groomedbefore,
   })
   .then(response => {
     res.status(200).json('Customer Entered')
