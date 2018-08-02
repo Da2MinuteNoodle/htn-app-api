@@ -13,7 +13,9 @@ const handleEnterCust = (req, res, db) => {
     specialneeds: specialneeds,
     groomedbefore: groomedbefore
   })
-  .then(response => return res.status(200).json('Customer Entered'))
+  .then(response => {
+    res.status(200).json('Customer Entered'))
+  })
   .catch(err => res.status(400).json('unable to enter customer'))
 }
 
