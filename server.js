@@ -29,7 +29,7 @@ app.use(cors());
 app.get('/', (req, res)=> { res.send('it is working!') })
 app.post('/signin', signin.handleSignin(db, bcrypt))
 app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcrypt) })
-app.post('./deletecust', (req, res) => { deletecust.handleDeleteCust(req, res, db )})
+app.post('/deletecust', (req, res) => { deletecust.handleDeleteCust(req, res, db )})
 app.post('/entercust', (req, res) => { entercust.handleEnterCust(req, res, db) })
 app.put('/editcust', (req, res) => { editcust.handleEditCust(req, res, db) })
 app.get('/viewcust', (req, res) => { viewcust.handleViewCust(req, res, db) })
