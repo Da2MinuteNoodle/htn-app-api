@@ -3,7 +3,7 @@ const handleEditCust = (req, res, db) => {
   if (!id) {
     return res.status(400).json('Incorrect form submission');
   }
-  if (next_appt === null) {
+  if (next_appt === "") {
     db('customers').where({ id: id }).update({
       name: name,
       phone: phone,
@@ -27,7 +27,7 @@ const handleEditCust = (req, res, db) => {
       groomedbefore: groomedbefore,
       next_appt: next_appt,
   }).then(res.status(200).json('Customer Changed'))
-  
+
 }
 }
 
