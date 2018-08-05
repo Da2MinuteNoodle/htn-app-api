@@ -14,6 +14,7 @@ const handleEditCust = (req, res, db) => {
       specialneeds: specialneeds,
       groomedbefore: groomedbefore,
     }).then(res.status(200).json('Customer Changed'))
+    .catch(err => res.status(400).json('unable to enter customer'))
   } else {
     db('customers').where({ id: id }).update({
       name: name,
@@ -26,8 +27,8 @@ const handleEditCust = (req, res, db) => {
       groomedbefore: groomedbefore,
       next_appt: next_appt,
   }).then(res.status(200).json('Customer Changed'))
-}
   .catch(err => res.status(400).json('unable to enter customer'))
+}
 }
 
 module.exports = {
